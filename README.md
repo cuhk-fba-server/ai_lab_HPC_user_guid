@@ -104,14 +104,7 @@ to request an interactive terminal with GPU, and then operate like a normal serv
 ### Submit your job
 ![](./pics/sbatch_submit.png)
 
-In the pilot phase, each user's resource limits are as follows:
-| Item | Limit |
-|------|-------|
-| CPU  | 16 cores |
-| GPU  | 1 H100 GPU |
-| Memory | 128GB |
-
-If you find that the job configuration is wrong, immediately usec`scancel <JOBID>` to cancel it, releasing resources for others.
+If you find that the job configuration is wrong (refer to [Resource Quote](#resource-quote)), immediately usec`scancel <JOBID>` to cancel it, releasing resources for others.
 
 If a job remains in PD (Pending) status for a long time, use `squeue -j <JOBID>` or `scontrol show job <JOBID>` to check the Reason field. Common reasons include Resources (insufficient resources), Priority (low priority), or QOSMaxNodePerUserLimit (exceeding user quota).
 
@@ -128,3 +121,12 @@ After the job ends, you can check the content of files specified by `#SBATCH --o
 | sacct | View historical records of finished jobs | `sacct -j <JOBID>` (check specific job)<br>`sacct -u username` |
 | scontrol | View detailed information of jobs or nodes | `scontrol show job <JOBID>`<br>`scontrol show node <NODELIST>` |
 | srun | Interactive job submission (for debugging) | `srun -p Interactive --pty bash` (request interactive terminal) |
+
+# Resource quote
+
+In the pilot phase, each user's resource limits are as follows:
+| Item | Limit |
+|------|-------|
+| CPU  | 16 cores |
+| GPU  | 1 H100 GPU |
+| Memory | 128GB |
