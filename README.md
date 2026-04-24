@@ -130,3 +130,4 @@ In the pilot phase, each user's resource limits are as follows:
 | CPU  | 16 cores |
 | GPU  | 1 H100 GPU |
 | Memory | 128GB |
+| Disk Space | /hpchome/{username} 100GB <br>/hpclarge/{username} 1000GB |
