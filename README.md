@@ -127,7 +127,7 @@ After the job ends, you can check the content of files specified by `#SBATCH --o
 In the pilot phase, each user's resource limits are as follows:
 | Item | Limit |
 |------|-------|
-| CPU  | 16 cores |
+| CPU  | 24 cores |
 | GPU  | 1 H100 GPU |
 | Memory | 128GB |
 | Disk Space | /hpchome/{username} 100GB <br>/hpclarge/{username} 1000GB |
